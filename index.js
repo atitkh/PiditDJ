@@ -1,4 +1,5 @@
-const token = process.env['token'];
+require('dotenv').config();
+const token = process.env.TOKEN;
 const fs = require("fs");
 const { Collection, Client } = require("discord.js");
 const { keep_alive } = require("./keep_alive");
@@ -6,7 +7,7 @@ const client = new Client();//Making a discord bot client
 client.commands = new Collection();//Making client.commands as a Discord.js Collection
 client.queue = new Map()
 client.config = {
-  prefix: process.env['prefix']
+  prefix: process.env.PREFIX
 }
 
 //Loading Events
